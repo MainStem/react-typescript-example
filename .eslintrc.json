@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "standard-with-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify it only for TypeScript files
+      }
+    }
+  ],
+  "rules": {
+    "no-use-before-define": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": false,
+        "shorthandFirst": true,
+        "shorthandLast": true,
+        "ignoreCase": false,
+        "noSortAlphabetically": false,
+        "reservedFirst": false
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "sort-imports": "off",
+    "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/consistent-type-assertions": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/triple-slash-reference": "off"
+  }
+}
